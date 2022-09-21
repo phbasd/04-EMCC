@@ -1,1 +1,33 @@
 @charset "UTF-8";
+
+:root{
+	--base-text-color: #666;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {font-size: 20px;} /*폰트 기준*/
+
+.d-none {
+	display: none;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;	
+}
+
+
+body {
+	font-family: "Maven Pro", "Noto Sans KR", sans-serif;
+	font-size: .7rem;
+	font-weight: 400;
+	color: var(--base-text-color);
+}
