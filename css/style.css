@@ -1,54 +1,59 @@
 @charset "UTF-8";
 
-:root{
-	--base-text-color: #666;
+:root {
+	--base-text-color: #666;	
+	--title-text-color: #1e598c;
+	--base-text-light: #fff;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+	}
+
+html { font-size: 20px } /* 폰트 기준 */
+
+
+body {
+	font-family: "Maven Pro", "Noto Sans KR", sans-serif;
+	font-size: .7rem; /* 14px로 렌더링 */
+	font-weight: 400; /* 100~900, bold, bolder, thin */
+	color: var(--base-text-color);
+}
+ul {
+	list-style: none;
 }
 
-html {font-size: 20px;} /*폰트 기준*/
 
 .d-none {
 	display: none;
 }
 
-
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48;	
-}
-
-
-body {
-	font-family: "Maven Pro", "Noto Sans KR", sans-serif;
-	font-size: .7rem;
-	font-weight: 400;
-	color: var(--base-text-color);
-}
-
+		  font-variation-settings:
+		  'FILL' 0,
+		  'wght' 400,
+		  'GRAD' 0,
+		  'opsz' 48
+		}
+		
+		
 .container {
 	max-width: 1000px;
-	margin:  0 auto;
-}
-
+	margin: 0 auto;	
+}		
 .pos-relative {
 	position: relative;
 }
-.pos-absolute{
-	position: absolute;
+.pos-absolute {
+	position: absolute;	
 }
 button {
 	background-color: transparent;
 	border: 0;
-	outline: none;
+	outline : none;
 }
-/*=============================header==========================*/
+/* ================= header =============== */
 header {
 	background-image: url("../images/visual_bg.jpg");
 	background-repeat: no-repeat;
@@ -59,23 +64,92 @@ header {
 }
 .logo {
 	margin: 2rem 0 0 0;
-}
+}	
 .burger {
 	right: 0;
-	top: 1rem;
+	top: 0;
+}
+.slogan_text {
+	margin: 230px auto 0;
+	width: 533px;
+	height: 243px;
+}	
+		
+/* ================= section > article =============== */
+.system-bg {
+	background-image: url("../images/system_bg.jpg");
+	background-repeat: repeat-x;
+	background-size: cover;
+	overflow: hidden;
+}
+.title {
+	text-align: center;
+	font-style: 1.5rem;
+	font-weight: 500;
+	color: var(--title-text-color);
+	border-bottom: 1px solid var(--title-text-color);
+	margin: 2.5rem 0 0 0;
+	padding: 0 0 .5rem 0; /* top right bottom left 순서로 padding 적용 */
+}
+.sub-title {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--base-text-light);
+	background-color: var(--title-text-color);
+	text-align: center;
+	width: 30%;
+	margin: 0 auto;
+	padding: .5rem 0;
+	
+}
+.system-list {
+	display: flex;
+	column-gap: 1rem;
+	margin: 3rem 0;
+}
+.system-list li {	/* 비율이 1:1 일때 정원 1:n 일때 타원*/
+	border-radius: 50%;
+	overflow: hidden;
+}
+.system-list li:hover .overlay {
+	display: flex;	/* 플레스 : 블럭 / 인라인-플렉스 */
+}
+.system-list .overlay {
+	background-color: rgba(0, 0, 0, .3);
+	color: var(--base-text-light);
+	width: 100%;
+	height: 100%;
+}
+.overlay  {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column; /* flex 기본정력 : row=행, column : 수직=열 */
+}
+.over-title {
+	font-size: 1.5rem;
 }
 
+.over-title + .material-symbols-outlined {	/* + : 다음 형제 요소, ~ : 다음 형제들 요소*/
+	font-size: 2rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
