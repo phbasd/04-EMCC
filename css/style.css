@@ -4,6 +4,7 @@
 	--base-text-color: #666;	
 	--title-text-color: #1e598c;
 	--base-text-light: #fff;
+	--base-text-dark: #000000;
 }
 
 * {
@@ -22,6 +23,10 @@ body {
 }
 ul {
 	list-style: none;
+}
+a {
+	color: inherit;
+	text-decoration: none;
 }
 
 
@@ -97,9 +102,10 @@ header {
 	color: var(--base-text-light);
 	background-color: var(--title-text-color);
 	text-align: center;
-	width: 30%;
+	width: 17rem;
 	margin: 0 auto;
 	padding: .5rem 0;
+	letter-spacing: -1px;
 	
 }
 .system-list {
@@ -133,9 +139,89 @@ header {
 .over-title + .material-symbols-outlined {	/* + : 다음 형제 요소, ~ : 다음 형제들 요소*/
 	font-size: 2rem;
 }
-
+/* ================= section > article > new-item =============== */
+.new-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem 0 2rem 0;
+}
+.new-item img:nth-of-type(1) {
+	width: 30rem;
+	object-fit: cover;	/*과거 max-width : 오래된 속성, 최대 넓이*/
+}
+.new-item button:nth-of-type(1) {
+	border: 1px solid var(--base-text-dark, black);
+	border-radius: 1.5rem;
+	font-size: .8rem;
+	color: var(--base-text-dark, black);
+	padding: .5rem 1rem;
+}	
+/* ================= aside =============== */
+.aside-bg {
+	background-image: url("../images/company.png"), url("../images/company_bg.jpg");
+	background-size: contain, cover;
+	background-repeat: no-repeat, repeat-x;
+	background-position: right bottom, left bottom;
+	min-height: 300px;
+}
+aside .container {
+	overflow: hidden;
+}
+aside .container .catch-title{
+		margin: 3rem 0 1rem 0;
+		font-size: 1rem;
+		font-weight: 500;
+		color: #193f5c;
 		
-		
+}
+aside .container .catch-desc {
+	font-size: 1.5rem;
+	color: #193f5c;
+}
+.w500 {
+	font-weight: 500;
+}
+.w300 {
+	font-weight: 300;
+}
+aside .container .extras {
+	margin: 3rem 0 0 0;
+	
+}	
+/* ================= extras =============== */
+.extras {
+	background-color: #f5f5f5;
+}
+.extras .container {
+	display: flex;
+	justify-content: space-between;
+}
+.contact {
+	font-size: 1rem;
+	font-weight: 700;
+	align-self: center;
+	color: #e86708;
+}
+.contact::before {
+	content: '';
+	display: inline-block;
+	background-image: url("../images/icon_call.png");
+	width: 28px;
+	height: 28px;
+	vertical-align: sub;
+}
+/* ================= footer =============== */
+footer .container {
+	text-align: center;
+	padding: 2rem 0;
+}
+footer .container h3 {
+	margin: 1rem 0;
+}
+footer .container p:nth-of-type(3) {
+	margin: 1rem 0 0 0;
+}
 		
 		
 		
