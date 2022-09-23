@@ -77,25 +77,36 @@
 						<div class="detail-content">
 							<div class="img-detail">
 								<div class="big-img">
-									<li><img src="https://picsum.photos/id/2/300" alt="picsum" /></li>
+									<img src="https://picsum.photos/id/1000/3000/3000" id="img1" alt="picsum" />
 								</div>
 								<ul class="small-img">
-									<li><img src="https://picsum.photos/id/1/100" alt="picsum" /></li>
-									<li><img src="https://picsum.photos/id/1/100" alt="picsum" /></li>
-									<li><img src="https://picsum.photos/id/1/100" alt="picsum" /></li>
+									<li><img src="https://picsum.photos/id/1/2000/2000" alt="picsum" /></li>
+									<li><img src="https://picsum.photos/id/10/2000/2000" alt="picsum" /></li>
+									<li><img src="https://picsum.photos/id/100/2000/2000" alt="picsum" /></li>
 								</ul>
 							</div>
 							<div class="text-detail">
 								<ul>
-									<li>제품명 : 지능형 텔레모스 시스템</li>
-									<li>출시일 : 2022.9.22</li>
-									<li>기타 내용...</li>
+									<p>제품명 : 지능형 텔레모스 시스템</p>
+									<p>출시일 : 2022.9.22</p>
+									<p>제조책임자 : 홍길동</p>
+									<p>기능 : 정수, 정화, 센서알림</p>
+									<p>컬러 : 베이지, 골드, 그레이</p>
+									<p>크기 : 6000 x 4500 x 1200 </p>
+									<p>특징 :
+										<ul>
+											<li>기존 모델과 다른 폼팩터 설계</li>
+											<li>상위 호환기종</li>
+											<li>정부사업지원</li>
+										</ul>
+									</p>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<script>
-						
+						//
+					
 						// .rounded
 						//찹업으로 제품의 상세 추가정보를 출력
 					</script>
@@ -157,6 +168,41 @@
 			<p><strong>emcc</strong>&copy; 2022. all rights reserved.</p>
 		</div>
 	</footer>
-	<script src="script/main.js"></script>
+	<script>
+		window.addEventListener("DOMContentLoaded",function(){
+        
+        const closeBT = document.querySelector("#close");
+        const detailBT = document.querySelector("#detail");
+        const itemDIV = document.querySelector(".item-detail");
+     
+        
+        detailBT.addEventListener("click", function(){
+           itemDIV.classList.remove("d-none");
+        });
+        closeBT.addEventListener("click", function(){
+           itemDIV.classList.add("d-none");
+        });
+  
+        const smallIMG = document.querySelectorAll(".small-img li");   //NodeList로 반환
+        const img1= document.querySelector("#img1");
+     
+        smallIMG[0].addEventListener("mouseover", function(){ 
+           img1.setAttribute("src","https://picsum.photos/id/1/2000/2000")
+        })            
+        
+        smallIMG[1].addEventListener("mouseover", function(){
+           img1.setAttribute("src","https://picsum.photos/id/10/2000/2000")
+        })            
+        
+        smallIMG[2].addEventListener("mouseover", function(){
+           img1.setAttribute("src","https://picsum.photos/id/100/2000/2000")
+        })            
+        /* smallIMG.forEach(function(){ 
+           console.log("클릭했습니다")*/
+        })               
+        
+     
+	</script>
+	<!-- <script src="script/main.js"></script> -->
 </body>
 </html>

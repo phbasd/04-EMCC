@@ -146,7 +146,7 @@ header {
 	align-items: center;
 	margin: 1rem 0 2rem 0;
 }
-.new-item img:nth-of-type(1) {
+.new-item > img:nth-of-type(1) {
 	width: 30rem;
 	object-fit: cover;	/*과거 max-width : 오래된 속성, 최대 넓이*/
 }
@@ -164,6 +164,62 @@ header {
 	top: 0;
 	left: 0;
 	overflow: hidden;
+
+}
+.detail-content {
+	display: flex;
+	column-gap: .5rem;
+}
+.img-detail {
+	flex: 4;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 400px;
+	row-gap: .5rem;
+}
+.img-detail img {
+	/* max-width: 100% css2 */
+	width: 100%;
+	object-fit: cover; /* contain, fill, cover[aspect ratio] : css3 */
+}
+.big-img {
+	flex: 7;
+	overflow: hidden;
+	
+}
+.small-img {
+	flex: 3;
+	overflow: hidden;
+	display: flex;
+	column-gap: .5rem;
+}
+.small-img li {
+	flex: 1;
+	/* overflow: hidden; */
+	
+}
+.small-img li img {
+	border: 1px solid transparent;
+	box-sizing: border-box;
+}
+.small-img li:hover img {
+	border: 3px solid dodgerblue;
+}
+.text-detail {
+	flex: 6;
+	background-color: #efefef;
+	border: 1px solid #000000;
+}
+.text-detail p {
+	margin: 1rem;
+}
+.text-detail ul {
+	list-style-type: square; /* 목록기호 : 사각형 */
+	list-style-position: inside; /* 목록기호 위치 : 안족, 바깥쪽 */
+	margin: 0 0 0 2rem;
+	
+	/* list-style: outside square; */
 }
 #close {
 	right: 5%;
@@ -226,6 +282,8 @@ aside .container .extras {
 	height: 28px;
 	vertical-align: sub;
 }
+
+
 /* ================= footer =============== */
 footer .container {
 	text-align: center;
