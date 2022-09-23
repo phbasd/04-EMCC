@@ -53,13 +53,16 @@ a {
 .pos-absolute {
 	position: absolute;	
 }
+.pos-fixed {
+	position: fixed;
+}
 button {
 	background-color: transparent;
 	border: 0;
 	outline : none;
 }
 /* ================= header =============== */
-header {
+header.main-header {	/*header 태그중 main-header 선택*/
 	background-image: url("../images/visual_bg.jpg");
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -227,6 +230,16 @@ header {
 	background-color: #000;
 	color: var(--base-text-light);
 	padding: .5rem 1rem;
+}
+/* ================= sidePanel =============== */
+#sidePanel {
+	background-color: dodgerblue;
+	min-width: 25rem;
+	right: 0;
+	top: 0;
+	height: 100%;
+	
+	
 }
 /* ================= aside =============== */
 .aside-bg {
