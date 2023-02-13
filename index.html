@@ -21,6 +21,7 @@
 <body>
 	<h1 class="d-none">EMCC 이미그룹</h1>
 	<!-- (header>.container>.logo+button+.slogan)+section+aside+footer|c -->
+	<div class="screen d-none"></div>
 	<header class="main-header">
 		<div class="container pos-relative">
 			<div class="logo">
@@ -66,51 +67,54 @@
 			</div>
 		</article>
 		<article>
+			
 			<div class="container">
 				<h3 class="title">생산제품</h3>
 				<p class="sub-title">2023년 신제품, 지능형 <strong>텔레모스 시스템!</strong></p>
 				<div class="new-item pos-relative">
 					<img src="images/product.png" alt="2023 신제품">
-					<button type="button" class="rounded-rect" id="detail">자세히 보기</button>
+					<button type="button" class="rounded-rect" id="open">자세히 보기</button>
 					<div class="item-detail pos-absolute d-none">
-						<span id="close" class="pos-absolute">닫기</span>
-						<div class="detail-content">
+						<div id="close">&times;</div>
+						<div class="detail">
 							<div class="img-detail">
 								<div class="big-img">
-									<img src="https://picsum.photos/id/1000/3000/3000" id="img1" alt="picsum" />
+									<img src="https://picsum.photos/id/1/3000/3000" id="img1" alt="picsum">
 								</div>
 								<ul class="small-img">
-									<li><img src="https://picsum.photos/id/1/2000/2000" alt="picsum" /></li>
-									<li><img src="https://picsum.photos/id/10/2000/2000" alt="picsum" /></li>
-									<li><img src="https://picsum.photos/id/100/2000/2000" alt="picsum" /></li>
+									<li><img src="https://picsum.photos/id/1/2000/2000" alt="picsum"></li>
+									<li><img src="https://picsum.photos/id/10/2000/2000" alt="picsum"></li>
+									<li><img src="https://picsum.photos/id/100/2000/2000" alt="picsum"></li>
 								</ul>
 							</div>
 							<div class="text-detail">
+								<p>모델명 : H12345</p>
+								<p>생산일 : 2022.09.23</p>
+								<p>제조책임자 : 선영훈</p>
+								<p>기능 : 정수, 정화, 센서알림</p>
+								<p>컬러 : 베이지, 골드, 그레이</p>
+								<p>크기 : 6000 x 4500 x 1200 </p>
+								<p>특징</p>
 								<ul>
-									<p>제품명 : 지능형 텔레모스 시스템</p>
-									<p>출시일 : 2022.9.22</p>
-									<p>제조책임자 : 홍길동</p>
-									<p>기능 : 정수, 정화, 센서알림</p>
-									<p>컬러 : 베이지, 골드, 그레이</p>
-									<p>크기 : 6000 x 4500 x 1200 </p>
-									<p>특징 :
-										<ul>
-											<li>기존 모델과 다른 폼팩터 설계</li>
-											<li>상위 호환기종</li>
-											<li>정부사업지원</li>
-										</ul>
-									</p>
+									<li>기존 모델과 다른 폼팩터 설계</li>
+									<li>상위 호환기종</li>
+									<li>정부지원사업 대상기종(할인)</li>
 								</ul>
 							</div>
 						</div>
+						<!-- /.detail -->
 					</div>
 					<script>
-						//
-					
-						// .rounded
-						//찹업으로 제품의 상세 추가정보를 출력
+						// .rounded-rect or #detail 버튼 클릭시
+						
+						// 팝업으로 제품의 상세/추가 정보를 출력한다.
+						// 단, 자바스크립트로 작성한다.
+						// $() <---> document.querySelector() : 첫번째 일치하는 요소를 css 선택자로 선택, 
+						//           document.querySelectorAll() : 모든 일치하는 요소를 선택 ==> 집합(Collection)
+						
 					</script>
 				</div>
+				<!-- /.new-item -->
 				<!-- <div class="carousel">
 					<div class="prev">
 						<span class="material-symbols-outlined">
@@ -142,26 +146,33 @@
 		</article>
 	</section>
 	<div id="sidePanel" class="pos-fixed collapsed">
-		<header class="side-header">
-			<h2>EMCC로고</h2>
-			<p>(주)이미그룹</p>
-			<nav class="side-nav">
-				<ul id="snb">
-					<li><a href="#">home</a></li>
-					<li><a href="#">product</a></li>
-					<li><a href="#">customer</a></li>
-					<li><a href="#">contact</a></li>
-					<li><a href="#">about</a></li>
-				</ul>
-			</nav>
-		</header>
-		<section>
-			<a href="#">id/pw 찾기</a> | <a href="#">고객센터</a>
-		</section>
-		<footer>
-			&copy; emcc. 2022.<br> by <a href="mailto:hanul17797@naver.com">hanul</a>
-		</footer>
-	</div>
+		<div class="container">
+			<header class="side-header">
+				<h2>EMCC로고</h2>
+				<p>(주)이미그룹</p>
+				<nav class="side-nav">
+					<ul id="snb">
+						<li><a href="#">home</a></li>
+						<li><a href="#">product</a></li>
+						<li><a href="#">customer</a></li>
+						<li><a href="#">contact</a></li>
+						<li><a href="#">about</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section>
+				<h2 class="d-none">id/pw찾기, 고객센터</h2>
+				<a href="#">id/pw 찾기</a> | <a href="#">고객센터</a>
+			</section>
+			<aside>
+				<button id="closePanel">&lt;</button>
+			</aside>
+			<footer>
+				&copy; emcc. 2022.<br> by <a href="mailto:hanul7797@naver.com">hanul</a>
+			</footer>
+		</div><!-- /.container -->
+		<!-- <button id="close">&times;</button> -->
+	</div><!-- /#sidePanel -->
 	<aside class="aside-bg">
 		<h2 class="d-none">이미그룹 캐치프레이즈</h2><!-- catchphrase : 다른 사람에게 주의를 끌기 위해 사용되는 문구 및 문장을 말한다.  (vs 슬로건) -->
 		<div class="container">
@@ -169,18 +180,18 @@
 			<p class="catch-desc"><span class="w500">사람과 자연 모두가 행복한 세상,</span> <br><span class="w300">이미가 만들어 가고자 하는 미래입니다.</span></p>
 		</div>
 	</aside>
-		<div class="extras">
-			<div class="container">
-				<div class="contact">
-					<a href="tel:+820626700300">062)676-0300</a>
-				</div>
-				<div class="scroll-top">
-					<a href="#top">
-						<img src="images/btn_top.gif" alt="go top">
-					</a>
-				</div>
+	<div class="extras">
+		<div class="container">
+			<div class="contact">
+				<a href="tel:+820626700300">062)676-0300</a>
+			</div>
+			<div class="scroll-top">
+				<a href="#top">
+					<img src="images/btn_top.gif" alt="go top">
+				</a>
 			</div>
 		</div>
+	</div>
 	<footer>
 		<div class="container">
 			<h3><a href="#"><img src="images/footer_logo.png" alt="emcc"></a></h3>			
@@ -190,39 +201,60 @@
 		</div>
 	</footer>
 	<script>
-		window.addEventListener("DOMContentLoaded",function(){
-        
-        const closeBT = document.querySelector("#close");
-        const detailBT = document.querySelector("#detail");
-        const itemDIV = document.querySelector(".item-detail");
-     
-        
-        detailBT.addEventListener("click", function(){
-           itemDIV.classList.remove("d-none");
-        });
-        closeBT.addEventListener("click", function(){
-           itemDIV.classList.add("d-none");
-        });
-  
-        const smallIMG = document.querySelectorAll(".small-img li");   //NodeList로 반환
-        const img1= document.querySelector("#img1");
-     
-        smallIMG[0].addEventListener("mouseover", function(){ 
-           img1.setAttribute("src","https://picsum.photos/id/1/2000/2000")
-        })            
-        
-        smallIMG[1].addEventListener("mouseover", function(){
-           img1.setAttribute("src","https://picsum.photos/id/10/2000/2000")
-        })            
-        
-        smallIMG[2].addEventListener("mouseover", function(){
-           img1.setAttribute("src","https://picsum.photos/id/100/2000/2000")
-        })            
-        /* smallIMG.forEach(function(){ 
-           console.log("클릭했습니다")*/
-        })               
-        
-     
+		window.addEventListener("DOMContentLoaded", function(){
+			const closeBT = document.querySelector("#close");
+			const openBT = document.querySelector("#open");
+			const itemDIV = document.querySelector(".item-detail");
+			
+			openBT.addEventListener("click", function(){
+				itemDIV.classList.remove("d-none");
+			});
+			closeBT.addEventListener("click", function(){
+				itemDIV.classList.add("d-none");
+			});
+			
+			// 1. small-img에 마우스가 (하나하나 이미지에) 올려지면(=닿으면, 클릭하면, 드래그..)
+			// 2. big-img에 이미지가(id="img1") 업데이트 된다.
+			
+			const smallIMG = document.querySelectorAll(".small-img li"); // NodeList로 반환
+			const img1 = document.querySelector("#img1");
+						
+			smallIMG[0].addEventListener("mouseenter", function(){  // jQuery : .attr("src"), .attr("src", "value")
+				//console.log(img1.getAttribute("src")); // .getAttribute(), .setAttribute()
+				img1.setAttribute("src", "https://picsum.photos/id/1/2000/2000")
+			})
+			smallIMG[1].addEventListener("mouseenter", function(){
+				img1.setAttribute("src", "https://picsum.photos/id/10/2000/2000")
+			})
+			smallIMG[2].addEventListener("mouseenter", function(){
+				img1.setAttribute("src", "https://picsum.photos/id/100/2000/2000")
+			})
+			
+			/* side panel */
+			//const openSidePanel = document.querySelector(".burger");
+			const toggleSidePanel = document.querySelector("#closePanel");
+			const sidePanel = document.querySelector("#sidePanel");
+			const screen = document.querySelector(".screen")
+			
+			toggleSidePanel.addEventListener("click", function(){
+				if(sidePanel.classList.contains("collapsed")) {					
+					sidePanel.classList.remove("collapsed");
+					toggleSidePanel.innerHTML = "&gt;";
+					screen.classList.remove("d-none");
+				} else {
+					sidePanel.classList.add("collapsed")
+					toggleSidePanel.innerHTML = "&lt;";
+					screen.classList.add("d-none");
+				}
+			});
+			
+			
+			/* smallIMG.forEach(function(){
+				console.log("클릭했습니다");
+			}) */
+			
+			
+		})
 	</script>
 	<!-- <script src="script/main.js"></script> -->
 </body>
